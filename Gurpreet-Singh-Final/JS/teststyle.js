@@ -1,5 +1,8 @@
 
 let testbutton = document.getElementById("TestBUTTON");
+let addCourse = document.getElementById("AddClass");
+let textbox1 = document.getElementById("textbox1");
+let textbox2 = document.getElementById("textbox2");
 
 class Queue {
     constructor() {
@@ -146,9 +149,6 @@ class Course{
         }
         
     }
-    getnoprereqs(){
-        return this.noprereqs;
-    }
 
     printPrerequisites(){
         
@@ -163,7 +163,7 @@ class Course{
             var getQueueElement = q.dequeue();
             // passing the current vertex to callback function
             if (getQueueElement === undefined){
-                continue;
+                break;
             }
 
             console.log(getQueueElement);
@@ -187,7 +187,9 @@ class Course{
 }
 
 var g = new Graph();
- 
+
+var vertices = [];
+
 Course.prototype.toString = function courseToString() {
   return `${this.name}`;
 };
@@ -198,28 +200,43 @@ testbutton.addEventListener("click", function(event){
    // Using the above implemented graph class
 
 
-var vertices = [ new Course('A'), new Course('B'), new Course('C'), new Course('D'), new Course('E'), new Course('F') ];
+    var vertices = [ new Course('CPSC2150'), new Course('1160'), new Course('1150'), new Course('1050'), new Course('950'), new Course('850') ];
  
-// adding vertices
-for (var i = 0; i < vertices.length; i++) {
-    g.addVertex(vertices[i]);
+    // adding vertices
+    for (var i = 0; i < vertices.length; i++) {
+        g.addVertex(vertices[i]);
 
-}
-vertices[0].fillEdges([vertices[1], vertices[2], vertices[5]]);
-vertices[1].fillEdges( [vertices[0],vertices[4]]);
-//vertices[2].fillEdges([vertices[5]]);
-//vertices[3].fillEdges([vertices[1], vertices[2], vertices[5]]);
+    }
+    vertices[0].fillEdges([vertices[1], vertices[2], vertices[5]]);
+    vertices[1].fillEdges( [vertices[0],vertices[4]]);
+    
+    //g.printGraph();
+    vertices[0].printPrerequisites();
+});
 
-// prints all vertex and
-// its adjacency list
-// A -> B D E
-// B -> A C
-// C -> B E F
-// D -> A E
-// E -> A D F C
-// F -> E C
-//g.printGraph();
-vertices[0].printPrerequisites();
+addCourse.addEventListener("click", function(event){
 
+    var text1 = textbox1.textContent();
+    var text2 = textbox2.textContent();
+    textbox1.textContent() = "";
+    textbox2.textContent() = "";
+
+    myArray = text2.split(",");
+    reqs = [];
+
+    for(var i = 0; i < myArray.length; i++){
+        reqs.push(new Course(myArray[i]));
+    }
+
+    Course add = new Course(text1);
+
+    vertices.push(add);
+
+    add.fillEdges();
+
+
+// get stuff from a text box
+// add to vertices
+// add to edges
 });
 
