@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="https://kit.fontawesome.com/b1f4fa2898.js" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote</title>
+    <link rel="icon" type="image/x-icon" href="../images/bowl-rice-solid.png">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="../JS/mystyle.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1><a href="../index.html">Meal<span>4U</span></a></h1>
+        <p class="tagline">We Make Cooking easy for you</p>
+    </header>
+    <nav>
+        <!-- This is the animated nav menu -->
+        <div id="nav-menu-button">
+           <div class="bar1"></div>
+           <div class="bar2"></div>
+           <div class="bar3"></div>
+         </div>
+       <!-- This element is hidden in CSS -->
+       <ul id="main-navigation">
+           <li><a href="../index.html">Home</a></li>
+           <li><a href="#main2">About Us</a></li>
+           <li><a href="references.html">References</a></li>
+           <li><a href="contact.html">Contact Us</a></li>
+           <li><a href="#socials">Socials</a></li>
+       </ul>
+   </nav>
+    <main>
+        <p class="tagline2">Get a bite for your dollar</p>
+
+        <h2>Place your order below:</h2>
+
+        <form id="quote">
+            <fieldset id="type">
+                <legend>Choose your type of Meal</legend>
+
+                <label>
+                    Vegetarian
+                    <input type="radio" name="type" value="Vegetarian">
+                </label>
+
+                <label>
+                    Non-Vegetarian
+                    <input type="radio" name="type" value="Non-Vegetarian">
+                </label>
+
+                <label>
+                    Gluten-free
+                    <input type="radio" name="type" value="gluten-free">
+                </label>
+
+            </fieldset>
+
+            <fieldset id="daysNumber">
+                <legend>How many days in a week</legend>
+
+                <label>
+                    <input type="number" min="1" max="5" value="1" name="Days">
+                </label>
+            </fieldset>
+
+            <fieldset id="days">
+                <legend>Choose the days</legend>
+
+                <label>
+                    Monday
+                    <input type="checkbox">
+                </label>
+
+                <label>
+                    Tuesday
+                    <input type="checkbox">
+                </label>
+
+                <label>
+                    Wednesday
+                    <input type="checkbox">
+                </label>
+
+                <label>
+                    Thursday
+                    <input type="checkbox">
+                </label>
+
+                <label>
+                    Friday
+                    <input type="checkbox">
+                </label>
+
+            </fieldset>
+
+            <fieldset id="people">
+                <legend>How many meals per person</legend>
+
+                <label>
+                    <input type="number" min="1" max="3" value="1" name="meals">
+                </label>
+            </fieldset>
+
+            <fieldset id="mail">
+                <label>
+                    Your Email
+                    <input type="text">
+                </label>
+            </fieldset>
+
+            <fieldset id="details">
+                <label>
+                    Additional details
+                    <textarea></textarea>
+                </label>
+            </fieldset>
+
+            <button id="get-quote">Get Quote</button>
+        </form>
+
+        <section id="main2">
+            <h2>Choose Meal4U</h2>
+                <p><i class="fa-solid fa-hand-holding-dollar"></i>If you want to save money on your grocery</p>
+                <p><i class="fa-solid fa-truck-ramp-box"></i>You like the sound of meals getting delivered at your doorstep</p>
+                <p><i class="fa-solid fa-utensils"></i>If you want to make cooking delicious food easy</p>
+        </section>
+    </main>
+    <footer>
+        <section>
+            <h3>About Us</h3>
+            <ul>
+                <li><a href="references.html">References</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="https://www.google.com/search?client=firefox-b-d&q=directions+to+langara+college">Directions</a></li>
+            </ul>
+            <p>&copy; 2023 Meal4u. All rights reeserved</p>
+        </section>
+        <section class="socials">
+            <h3 id="socials">Socials</h3>
+            <ul>
+                <li><a href="https://facebook.com" aria-label="Facebook" title="Facebook"><i aria-hidden="true" class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://instagram.com" aria-label="Instagram" title="Instagram"><i aria-hidden="true" class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://pinterest.com" aria-label="Pinterest" title="Pinterest"><i aria-hidden="true" class="fa-brands fa-pinterest"></i></a></li>
+            </ul>
+        </section>
+    </footer>
+</body>
+</html>
