@@ -143,6 +143,9 @@ class Course{
         this.noprereqs = 0;
     }
     fillEdges(listofprereqs){
+        if (listofprereqs === undefined)
+            return;
+
         for (var i of listofprereqs){
             this.noprereqs += 1;
             g.addEdge(this, i);
@@ -216,23 +219,62 @@ testbutton.addEventListener("click", function(event){
 
 addCourse.addEventListener("click", function(event){
 
-    var text1 = textbox1.textContent();
-    var text2 = textbox2.textContent();
-    textbox1.textContent() = "";
-    textbox2.textContent() = "";
+    // var text1 = textbox1.textContent();
+        var text1 = textbox1.value;
+    // var text1 = ("textbox1").val();
+    // var text2 = textbox2.textContent();
+      // var text2 = ("textbox2").val();
+        var text2 = textbox2.value;
+    //textbox1.textContent() = "";
+    //textbox2.textContent() = "";
 
     myArray = text2.split(",");
-    reqs = [];
-
+    var reqs = [];
+    var temp;
     for(var i = 0; i < myArray.length; i++){
-        reqs.push(new Course(myArray[i]));
+        temp = addCourse.addEventListener("click", function(event){
+
+            //var text1 = textbox1.textContent();
+             // var text1 = ("textbox1").val();
+            //var text2 = textbox2.textContent();
+              // var text2 = ("textbox2").val();
+            //textbox1.textContent() = "";
+            //textbox2.textContent() = "";
+            var text1 = textbox1.value;
+            var text2 = textbox2.value; 
+        
+            myArray = text2.split(",");
+            reqs = [];
+            var temp;
+            for(var i = 0; i < myArray.length; i++){
+                temp = new Course(myArray[i]);
+                reqs.push(temp);
+                if (!vertices.includes(temp, 0))
+                    g.addVertex(temp);
+            }
+        
+            var add = new Course(text1);
+            if (!vertices.includes(add, 0)){
+                g.addVertex(add);
+                if (reqs.length != 0)
+                    add.fillEdges(reqs);
+            }
+
+        
+        
+        // get stuff from a text box
+        // add to vertices
+        // add to edges
+        });         
+        reqs.push();
+        vertices.push()
     }
 
-    Course add = new Course(text1);
+    var add = new Course(text1);
 
     vertices.push(add);
 
-    add.fillEdges();
+    add.fillEdges(reqs);
 
 
 // get stuff from a text box
