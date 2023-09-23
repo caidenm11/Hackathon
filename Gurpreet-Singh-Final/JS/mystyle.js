@@ -1,5 +1,8 @@
-
+/*
 let button = document.getElementById("nav-menu-button");
+
+
+
 
 
 button.addEventListener("click", function(event){
@@ -16,3 +19,5 @@ button.addEventListener("click", function(event){
         navMenu.style.display = "block";
       }
 });
+*/
+
