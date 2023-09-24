@@ -1,0 +1,67 @@
+body {background-color: grey;}
+h1{  
+  background-color: orange;      
+  color: black;
+  font-family: verdana;
+  font-size: 300%;
+}
+header {background-color: orange;}
+
+button{
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+/* .button1{
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+} */
+.col0 { grid-area: button0; }
+.col1 { grid-area: button1; }
+.col2 { grid-area: button2; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'button0 button1 button2'
+    'button0 button1 button2'
+    'button0 button1 button2';
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    /* grid-auto-rows: 20px; */
+  grid-gap: 5px;
+
+  /* gap: 10px; */
+  /* background-color: #2196F3; */
+  /* padding: 10px; */
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  /* padding: 20px 0; */
+  font-size: 30px;
+}
+
+.div2{
+  margin: 0;
+  position: absolute;
+  top: 22%;
+  left: 30%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
