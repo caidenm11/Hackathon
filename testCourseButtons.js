@@ -41,22 +41,29 @@ class CourseButton{
         button.setAttribute("prereq",this.prereqs);
         console.log(this.prereqs);
         function showNextRequisites(){
-                if(button.getAttribute("clickCount") == 0){
-                    for(var i = 0; i < button.getAttribute("prereq").length; i++){
-                    let nextCourse = new CourseButton(button.getAttribute("prereq")[i],"dept2",123,hierarchyNext);
-                    nextCourse.createButton();
-                    let buttonNext = document.getElementById(button.getAttribute("prereq")[i]);
-                    button.setAttribute("clickCount",1);
-                }
+            var myArray = button.getAttribute("prereq").split(",");
+            var reqs = [];
+            var temp;
+            for(var i = 0; i < myArray.length; i++){
+                temp = new Course(myArray[i]);
+                reqs.push(temp);
             }
-                else{
-                    for(var i = 0; i < button.getAttribute("prereq").length; i++){
-                        let buttonDestroy = document.getElementById(button.getAttribute("prereq")[i]);
-                        buttonDestroy.remove();
-                        button.setAttribute("clickCount",0);
-                    }
-                    
-                }            
+            if(button.getAttribute("clickCount") == 0){
+                for(var i = 0; i < reqs.length; i++){
+                    let nextCourse = new CourseButton(reqs[i],"dept2",123,hierarchyNext,[]);
+                    nextCourse.createButton();
+                    let buttonNext = document.getElementById(reqs[i]);
+                    button.setAttribute("clickCount",1);
+            }
+            }
+            else{
+                for(var i = 0; i < reqs.length; i++){
+                    let buttonDestroy = document.getElementById(reqs[i]);
+                    buttonDestroy.remove();
+                    button.setAttribute("clickCount",0);
+                }
+                
+            }            
         }
     }
     
