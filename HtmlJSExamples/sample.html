@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<header>
+    <div>
+        <h1 id = "a">Langara Course Planner</h1>
+    </div>
+</header>
+
+
+<head>     
+    <title> My Title </title>
+    <script src="sample.js" defer></script>
+    <script src="teststyle.js"defer></script>
+</head>
+
+<style>
+    body {background-color: powderblue;}
+    title {color:blueviolet; 
+           font-family:'Times New Roman', Times, serif
+            }
+
+    h1   {color: blue;
+          font-family: verdana;
+          font-size: 100%;}
+    p    {color: red;
+          font-family:'Courier New', Courier, monospace}
+
+</style>
+
+<body>
+<button id="nav-menu-button">meh</button>
+<div id="main-navigation" style="display: none;">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+</div>
+
+<div>
+<button id ="TestBUTTON">meha</button>    
+</div>
+
+
+<div>
+    <h2 style="color:blue;" > What Can JavaScript Do?</h2>
+    <h2> This is Header type 2</h2>
+    <h1> Header type 1 </h1>
+    <h3 id = "a" > Header type 3 with id </h3>
+</div>
+
+Text can be simply written like this.
+
+
+<p id ="demo" style = "color : black"> SUP SUP SUP SUP </p>
+<p id ="demo2">JavaScript can change HTML content.</p>
+<p id = "geh"> </p>
+<p> Alternatively, p doesnt have to have an id.</p>
+
+
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+
+<button type ="button" onclick = 'document.getElementById("demo").innerHTML = " JavaScript can change HTML content"'> meh </button>
+
+<button type = "button" onclick = 'document.getElementById("demo").innerHTML = "SUP SUP SUP SUP"'> meh2 </button> 
+
+<button id = 'appear' type = "button" onclick = 'document.getElementById("geh").innerHTML = "Now I can make text appear"'> appear</button>
+
+<button type = "button" onclick = 'document.getElementById("geh").innerHTML = " "'> dissappear</button>
+
+<img id="lightbulb" src="pic_bulboff.gif" style="width:100px">
+
+<button id = 'beer' type = "button" onclick = "document.getElementById('lightbulb').src='pic_bulbon.gif'" style = "width:100px"> Turn on the light </button>
+
+<button id = 'beer'  type = "button" onclick = "document.getElementById('lightbulb').src='pic_bulboff.gif'" style = "Width:100px"> Turn off the light </button>
+
+
+<button id = 'ceer' type = "button" onclick = "document.getElementById('geh').style.fontSize = '36px'"> ChangeFont</button>
+
+<button id = 'deer' type = "button" onclick = "document.getElementById('geh').style.fontSize = '16px'">ChangeFontBack</button>
+
+
+<form action="/action_page.php">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <input type="submit" value="Submit">
+</form>
+  
+
+  
+</body>
+</html>
